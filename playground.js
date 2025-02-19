@@ -58,3 +58,22 @@ try {
 } finally {
     console.log("this too!");
 }
+
+function countSelected(selectObject) {
+    let numberSelected = 0;
+    for (let i = 0; i < selectObject.options.legnth; i++) {
+        if (selectObject.options[i].selected) {
+            numberSelected++;
+        }
+    }
+
+    return numberSelected;
+}
+
+const btn = document.getElementById("btn");
+btn.addEventListener("click", () => {
+    const musicTypes = document.selectForm.musicTypes;
+    console.log(`You have selected ${countSelected(musicTypes)} option(s).`);
+});
+
+// I think there has been sufficient prep. Make app.

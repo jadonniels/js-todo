@@ -3,11 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My JavaScript App</title>
+    <title>To-Do List</title>
   </head>
   <body>
-    <h1>My First JS App</h1>
-    <button id="myButton">Click me</button>
+    <h1>To Do</h1>
+    <h2 id="datetime"></h2>
+
+    <ul id="list">
+      <input type="text" id="candidate" />
+      <button onclick="addItem()" class="buttonClass">Add Item</button>
+      <button onclick="removeItem()" class="buttonClass">Remove Item</button>
+    </ul>
 
     <script src="script.js"></script>
   </body>
