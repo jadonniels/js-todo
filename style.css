@@ -1,0 +1,30 @@
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the box */
+    border-radius: 2px;
+    border-style: dashed;
+    margin: 10px;
+    padding: 20px; /* More padding for better centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Ensures text inside is centered */
+}
+
+.list {
+    display: flex;
+    justify-content: center; /* Centers input & buttons */
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.datetime {
+    color: darkblue;
+}
+
+.listElt {
+    font-size: 50px;
+    text-align: center; /* Ensures text inside is centered */
+}

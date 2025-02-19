@@ -3,17 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>To-Do List</title>
   </head>
   <body>
-    <h1>To Do</h1>
-    <h2 id="datetime"></h2>
+    <div id="box">
+      <h1>To Do</h1>
+      <h2 id="datetime"></h2>
 
-    <ul id="list">
-      <input type="text" id="candidate" />
-      <button onclick="addItem()" class="buttonClass">Add Item</button>
-      <button onclick="removeItem()" class="buttonClass">Remove Item</button>
-    </ul>
+      <div id="list">
+        <ul>
+          <input type="text" id="candidate" />
+          <button onclick="addTask()" class="buttonClass">Add Task</button>
+          <button onclick="removeSpecificTask()" class="buttonClass">
+            Remove Task
+          </button>
+        </ul>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

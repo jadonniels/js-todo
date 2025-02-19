@@ -1,23 +1,45 @@
-// Get current date and time
-var now = new Date();
-var datetime = now.toLocaleString();
+document.addEventListener("DOMContentLoaded", function () {
+    var now = new Date();
+    var datetime = now.toLocaleString();
+    document.getElementById("datetime").textContent = datetime;
 
-// Insert date and time into HTML
-document.getElementById("datetime").innerHTML = datetime;
+    document.getElementById("datetime").classList.add("datetime");
+    document.getElementById("box").classList.add("box");
+});
 
-function addItem() {
-    const a = document.getElementById("list");
-    const candidate = document.getElementById("candidate");
-    const li = document.createElement("li");
+function addTask() {
+    const arr = document.getElementById("list");
+    const item = document.getElementById("candidate");
 
-    li.setAttribute("id", candidate.value);
-    li.appendChild(document.createTextNode(candidate.value));
-    a.appendChild(li);
+    if (item.value.trim() !== "") {
+        const child = document.createElement("li");
+
+        child.textContent = item.value;
+        child.classList.add("listElt");
+
+        arr.appendChild(child);
+        item.value = ""; // Reset
+    } else {
+        alert("Provide an input value before proceeding");
+    }
 }
 
-function removeItem() {
-    const a = document.getElementById("list");
-    const candidate = document.getElementById("candidate");
-    const item = document.getElementById(candidate.value);
-    a.removeChild(item);
+function removeSpecificTask() {
+    const arr = document.getElementById("list");
+    const item = document.getElementById("candidate").value.trim();
+
+    if (item === "") {
+        alert("Enter a task to remove.");
+        return;
+    }
+
+    const tasks = arr.getElementsByTagName("li");
+    for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].textContent === item) {
+            arr.removeChild(tasks[i]);
+            return;
+        }
+    }
+
+    alert("Task not found.");
 }
